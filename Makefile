@@ -1,4 +1,4 @@
-NAME = so_long
+NAME = so_long.a
 
 RM = rm -f
 
@@ -12,15 +12,8 @@ OBJs = $(SRCs:.c=.o)
 
 all : $(NAME)
 
-# $(NAME) : $(OBJs)
-# 	ar rcs $(NAME) $(OBJs)
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-
-
-$.o : %.c
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
-
+$(NAME) : $(OBJs)
+	ar rcs $(NAME) $(OBJs)
 
 clean : 
 	$(RM) $(OBJs) 
