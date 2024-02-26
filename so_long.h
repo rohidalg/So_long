@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/02/20 19:27:02 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:28:25 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,25 @@ typedef struct s_images
     int exit;
 }           t_images;
 
+typedef struct s_map
+{
+	int				hight;
+	int				width;
+	int				x;
+	int				y;
+	int				player;
+	int				count;
+	int				finish;
+	unsigned int	step;
+	char			*txt;
+	char			**map;
+	void			*mlx;
+	void			*win;
+	t_images		*images;
+}	t_map;
 
+void ft_map_size(t_map *data);
 
-void ft_draw();
 
 
 #endif

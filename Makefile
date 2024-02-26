@@ -6,7 +6,8 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCs = \
+SRCs = ft_read_map.c \
+	
 
 OBJs = $(SRCs:.c=.o)
 
