@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/02/26 17:28:25 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/02/27 16:12:52 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_map
 	void			*mlx;
 	void			*win;
 	t_images		*images;
-}	t_map;
+}			t_map;
 
 void ft_map_size(t_map *data);
 
