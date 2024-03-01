@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/02/27 16:12:52 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:53:30 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include "../get_next_line/get_next_line.h"
+# include "../mlx/mlx.h"
 
 typedef struct s_images
 {

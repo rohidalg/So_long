@@ -6,11 +6,28 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:50:25 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/02/20 17:15:45 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:51:31 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void wall_image(t_map *data, int *i, int *j)
+{
+    mlx_put_image_to_window(data->mlx, data->win, data->images->wall, (*i) * 40, (*j) * 40);
+}
+
+void floor_image(t_map *data, int *i, int *j)
+{
+    mlx_put_image_to_window(data->mlx, data->win, data->images->floor, (*i) * 40, (*j) * 40);
+}
+
+void player_image(t_map *data, int *i, int *j)
+{
+    mlx_put_image_to_window(data->mlx, data->win, data->images->player, (*i) * 40, (*j) * 40);
+    data->x = *i;
+    data->y = *j;
+}
 
 void ft_draw()
 {
@@ -20,9 +37,9 @@ void ft_draw()
     i = 0;
     j = 0;
     
-    while(map)
+    while(data->map[i])
     {
-        while(i != '\0')
+        while()
         {
             if (i == 1)
                 wall.xpm;
