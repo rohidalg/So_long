@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:50:25 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/06 16:33:14 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/06 19:53:17 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 void	wall_image(t_map *data, int *i, int *j)
 {
-	mlx_put_image_to_window(data->mlx, data->win, data->images->wall, (*i) * 40,
-		(*j) * 40);
+	mlx_put_image_to_window(data->mlx, data->win, data->images->wall, 
+    (*i) * 40, (*j) * 40);
 }
 
 void	floor_image(t_map *data, int *i, int *j)
 {
-	mlx_put_image_to_window(data->mlx, data->win, data->images->floor, (*i)
-		* 40, (*j) * 40);
+	mlx_put_image_to_window(data->mlx, data->win, data->images->floor, 
+    (*i) * 40, (*j) * 40);
 }
 
 void	player_image(t_map *data, int *i, int *j)
 {
-	mlx_put_image_to_window(data->mlx, data->win, data->images->player, (*i)
-		* 40, (*j) * 40);
+	mlx_put_image_to_window(data->mlx, data->win, data->images->player, 
+    (*i) * 40, (*j) * 40);
 	data->x = *i;
 	data->y = *j;
 }

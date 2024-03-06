@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:22:47 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/06 16:34:25 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:56:41 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_move_w(t_map *data)
 {
-	if (data->map[data->y - 1][data->x] != '1' && data->map[data->y
-		- 1][data->x] != 'E')
+	if (data->map[data->y - 1][data->x] != '1' && data->map
+    [data->y - 1][data->x] != 'E')
 	{
-		if (data->map[data->y - 1][data->x] == 'C' || data->map[data->y
-			- 1][data->x] == '0')
+		if (data->map[data->y - 1][data->x] == 'C' || data->map
+        [data->y- 1][data->x] == '0')
 		{
 			if (data->map[data->y - 1][data->x] == 'C')
 				data->count--;
@@ -35,11 +35,11 @@ void	ft_move_w(t_map *data)
 
 void	ft_move_a(t_map *data)
 {
-	if (data->map[data->y][data->x - 1] != '1' && data->map[data->y][data->x
-		- 1] != 'E')
+	if (data->map[data->y][data->x - 1] != '1' && data->map[data->y]
+    [data->x - 1] != 'E')
 	{
-		if (data->map[data->y][data->x - 1] == 'C' || data->map[data->y][data->x
-			- 1] == '0')
+		if (data->map[data->y][data->x - 1] == 'C' || data->map[data->y]
+        [data->x - 1] == '0')
 		{
 			if (data->map[data->y][data->x - 1] == 'C')
 				data->count--;
@@ -56,11 +56,11 @@ void	ft_move_a(t_map *data)
 
 void	ft_move_s(t_map *data)
 {
-	if (data->map[data->y + 1][data->x] != '1' && data->map[data->y
-		+ 1][data->x] != 'E')
+	if (data->map[data->y + 1][data->x] != '1' && data->map
+    [data->y + 1][data->x] != 'E')
 	{
-		if (data->map[data->y + 1][data->x] == 'C' || data->map[data->y
-			+ 1][data->x] == '0')
+		if (data->map[data->y + 1][data->x] == 'C' || data->map
+        [data->y + 1][data->x] == '0')
 		{
 			if (data->map[data->y + 1][data->x] == 'C')
 				data->count--;
@@ -77,11 +77,11 @@ void	ft_move_s(t_map *data)
 
 void	ft_move_d(t_map *data)
 {
-	if (data->map[data->y][data->x + 1] != '1' && data->map[data->y][data->x
-		+ 1] != 'E')
+	if (data->map[data->y][data->x + 1] != '1' && data->map[data->y]
+    [data->x + 1] != 'E')
 	{
-		if (data->map[data->y][data->x + 1] == 'C' || data->map[data->y][data->x
-			+ 1] == '0')
+		if (data->map[data->y][data->x + 1] == 'C' || data->map[data->y]
+        [data->x + 1] == '0')
 		{
 			if (data->map[data->y][data->x + 1] == 'C')
 				data->count--;

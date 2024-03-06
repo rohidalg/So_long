@@ -6,9 +6,15 @@ HEADERS =	so_long.h \
 
 INCLUDES =	mlx/libmlx.a
 
-SOURCES =	ft_read_map.C	\
+SOURCES =	ft_read_map.c	\
+		ft_check_map.c \
+		ft_draw.c \
+		ft_finish.c \
+		ft_functions.c \
+		ft_move.c \
 		get_next_line_utils.c \
 		get_next_line.c	\
+
 
 DIR_OBJ	= objects
 OBJECTS = $(addprefix $(DIR_OBJ)/,$(SOURCES:%.c=%.o))

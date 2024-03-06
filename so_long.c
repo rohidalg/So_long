@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/06 16:48:00 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/06 19:27:27 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,22 @@ void	ft_load_image(t_map *data)
 	data->images->floor = mlx_xpm_file_to_image(data->mlx, FLOOR, &hig, &wid);
 	data->images->exit = mlx_xpm_file_to_image(data->mlx, EXIT, &hig, &wid);
 }
+
+void ft_reset(t_map *data, char *name)
+{
+    data->hight = 0;
+	data->width = 0;
+	data->x = 0;
+	data->y = 0;
+	data->player = 0;
+	data->count = 0;
+	data->finish = 0;
+	data->move = 0;
+	data->txt = name;
+	ft_load_image(data);
+}
+
+// void ft_check_general(t_map *data)
+// {
+	
+// }
