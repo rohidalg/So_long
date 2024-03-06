@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_functios.c                                      :+:      :+:    :+:   */
+/*   ft_functions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:55:27 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/06 19:48:58 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/06 20:15:51 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char *ft_strcpy(char *s1, char *s2)
-{
-    int i;
+// char *ft_strcpy(char *s1, char *s2)
+// {
+//     int i;
     
-    i = -1;
-    while (s2[i++])
-    {
-        s1[i] = s2[i];
-    s1[i] = '\0';
-    return (s1);
-    }
-}
+//     i = -1;
+//     while (s2[i++])
+//     {
+//         s1[i] = s2[i];
+//     s1[i] = '\0';
+//     return (s1);
+//     }
+// }
 
 // char *ft_strdup(char *s)
 // {

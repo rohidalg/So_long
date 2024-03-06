@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/06 19:49:13 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/06 20:03:06 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@
 
 typedef struct s_images
 {
-	int				player;
-	int				wall;
-	int				object;
-	int				floor;
-	int				exit;
+	int				*player;
+	int				*wall;
+	int				*object;
+	int				*floor;
+	int				*exit;
 }					t_images;
 
 typedef struct s_map
