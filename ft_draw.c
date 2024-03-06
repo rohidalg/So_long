@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:50:25 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/01 18:51:31 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:59:44 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void player_image(t_map *data, int *i, int *j)
     data->y = *j;
 }
 
-void ft_draw()
+void ft_draw(t_map *data)
 {
     int i;
     int j;
@@ -39,18 +39,18 @@ void ft_draw()
     
     while(data->map[i])
     {
-        while()
+        while(data->map[i][j])
         {
-            if (i == 1)
-                wall.xpm;
-            else if (i == 0)
-                floor.xpm;
-            else if (i == p)
-                character.xpm;
-            else if (i == c)
-                object.xpm;
-            else if (i == e)
-                exit.xpm;
+            if (data->map[i][j] == '1')
+                wall_image(data, &i, &j);
+            else if (data->map[i][j] == '0')
+                floor_image(data, &i, &j);
+            else if (data->map[i][j] == 'p')
+                player_image(data, &i, &j);
+            else if (data->map[i][j] == 'c')
+                mlx_put_image_to_window(data->mlx, data->win, data->images->object, i * 40, j * 40);
+            else if (data->map[i][j] == 'e')
+                mlx_put_image_to_window(data->mlx, data->win, data->images->exit, i * 40, j * 40);
             i++;
         }
         j++;
