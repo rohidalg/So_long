@@ -14,7 +14,7 @@ SOURCES =	ft_read_map.c	\
 		ft_move.c \
 		get_next_line_utils.c \
 		get_next_line.c	\
-
+		so_long.c \
 
 DIR_OBJ	= objects
 OBJECTS = $(addprefix $(DIR_OBJ)/,$(SOURCES:%.c=%.o))

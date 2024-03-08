@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/06 19:27:27 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/08 17:33:11 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,24 @@ void ft_reset(t_map *data, char *name)
 	ft_load_image(data);
 }
 
-// void ft_check_general(t_map *data)
-// {
+void ft_check_general(t_map *data)
+{
+	ft_check_ber(data);
+	ft_check_outline(data);
+}
+
+int main (/*int words, char **arguments*/)
+{
+	t_map data;
+	int i;
 	
-// }
+	i = 0;
+	if (/*words == 2*/i == 0)
+	{
+		data.mlx = mlx_init();
+		data.win = mlx_new_window(data.mlx, data.width * 40, data.hight * 40, "so_long");
+		
+		mlx_loop(data.mlx);
+	}
+	return(0);
+}

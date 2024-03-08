@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/06 20:03:06 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/08 16:42:29 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void				ft_move_a(t_map *data);
 void				ft_move_s(t_map *data);
 void				ft_move_d(t_map *data);
 int					ft_press(int keycode, t_map *data);
-char				*ft_strcpy(char *s1, char *s2);
+// char				*ft_strcpy(char *s1, char *s2);
 // char				*ft_strdup(char *s);
 int					ft_strcmp(char *s1, char *s2);
 void				ft_itoa(unsigned int n);
