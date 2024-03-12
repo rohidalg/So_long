@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:17:31 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/08 19:53:45 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:06:24 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,27 @@ void ft_check_double(t_map *data)
     }
 }
 
-
+void ft_check_pirate(t_map *data)
+{
+    int i[2];
+    int j[2];
+    int treasure;
+    
+    i[1] = -1;
+    treasure = 0;
+    while(data->map[i[0]][++i[1]])
+    {
+        i[0] = -1;
+        while(data->map[++i[0]])
+        {
+            if (data->map[i[0]] == 'P')
+            {
+                j[0] = i[0];
+                j[1] = i[1];
+            }
+            if (data->map[i[0]] == 'C' || data->map[i[0]] == 'E')
+                treasure++;
+        }
+    }
+    ft_is_posible(data, i[0], j[0], treasure);
+}

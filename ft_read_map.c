@@ -6,11 +6,17 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:55:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/06 16:35:05 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:25:05 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void ft_bad_malloc(void)
+{
+	write(2, "\n\nMALLOC_ERROR_MAP\n\n", 21);
+	exit(EXIT_FAILURE);
+}
 
 void	ft_map_size(t_map *data)
 {

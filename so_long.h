@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/08 16:42:29 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:04:34 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,12 @@ typedef struct s_map
 	t_images		*images;
 }					t_map;
 
+typedef struct s_checker
+{
+	int 			**map;
+	int 			coins_treasure;
+}					t_checker;
+
 void				ft_map_size(t_map *data);
 void				ft_move_w(t_map *data);
 void				ft_move_a(t_map *data);
@@ -78,5 +84,12 @@ void				player_image(t_map *data, int *i, int *j);
 void				ft_draw(t_map *data);
 void				ft_check_outline(t_map *data);
 void				ft_check_ber(t_map *data);
+void ft_check_char(t_map *data);
+void ft_check_double(t_map *data);
+void ft_check_pirate(t_map *data);
+void ft_malloc_map(t_checker *c, t_map *data);
+void ft_free_checker(t_checker *c, int hight);
+void ft_treasure_hunter(t_checker *c, t_map *data, int i, int j);
+void ft_is_posible(t_map *data, int i, int j, int treasure);
 
 #endif

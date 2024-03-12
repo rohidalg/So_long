@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/08 17:33:11 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/12 16:33:44 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,24 @@ void ft_check_general(t_map *data)
 {
 	ft_check_ber(data);
 	ft_check_outline(data);
+	ft_check_char(data);
+	ft_check_double(data);
+	ft_check_pirate(data);
 }
 
-int main (/*int words, char **arguments*/)
+int main (int words, char **arguments)
 {
 	t_map data;
 	int i;
 	
 	i = 0;
-	if (/*words == 2*/i == 0)
+	if (words == 2)
 	{
 		data.mlx = mlx_init();
+		ft_reset(&data, arguments[1]);
+		ft_map_size(&data);
+		// ft_malloc_map(&data);
+		ft_check_general(&data);
 		data.win = mlx_new_window(data.mlx, data.width * 40, data.hight * 40, "so_long");
 		
 		mlx_loop(data.mlx);
