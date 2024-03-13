@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:17:31 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/12 16:06:24 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:50:41 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,12 @@ void ft_check_pirate(t_map *data)
         i[0] = -1;
         while(data->map[++i[0]])
         {
-            if (data->map[i[0]] == 'P')
+            if (data->map[i[1]][i[0]] == 'P')
             {
                 j[0] = i[0];
                 j[1] = i[1];
             }
-            if (data->map[i[0]] == 'C' || data->map[i[0]] == 'E')
+            if (data->map[i[1]][i[0]] == 'C' || data->map[i[1]][i[0]] == 'E')
                 treasure++;
         }
     }

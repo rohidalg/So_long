@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/12 16:04:34 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:22:02 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ typedef struct s_checker
 }					t_checker;
 
 void				ft_map_size(t_map *data);
+void				ft_maplloc(t_map *data);
 void				ft_move_w(t_map *data);
 void				ft_move_a(t_map *data);
 void				ft_move_s(t_map *data);

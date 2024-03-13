@@ -8,6 +8,7 @@ INCLUDES =	mlx/libmlx.a
 
 SOURCES =	ft_read_map.c	\
 		ft_check_map.c \
+		ft_check.c \
 		ft_draw.c \
 		ft_finish.c \
 		ft_functions.c \
