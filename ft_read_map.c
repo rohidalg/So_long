@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:55:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/13 17:23:31 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:38:08 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,21 @@ void	ft_map_size(t_map *data)
 	
 	fd = open(data->txt, O_RDONLY);
 	gnl = get_next_line(fd);
+	if (!gnl)
+	{
+		write(2, "\n\nERROR_READ_MAP\n\n", 19);
+		exit(EXIT_FAILURE);
+	}
 	strlen = ft_strlen(gnl) - 1;
 	data->width = strlen;
 	data->hight = 0;
 	while (gnl)
 	{
+		if ((int)strlen != data->width)
+		{
+			write(2, "Error\nMap not valid\n", 20);
+			exit (EXIT_FAILURE);
+		}
 		data->hight++;
 		free(gnl);
 		gnl = get_next_line(fd);

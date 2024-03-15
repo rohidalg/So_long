@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:50:25 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/06 19:53:17 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:48:29 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 void	wall_image(t_map *data, int *i, int *j)
 {
 	mlx_put_image_to_window(data->mlx, data->win, data->images->wall, 
-    (*i) * 40, (*j) * 40);
+    (*i) * 32, (*j) * 32);
 }
 
 void	floor_image(t_map *data, int *i, int *j)
 {
 	mlx_put_image_to_window(data->mlx, data->win, data->images->floor, 
-    (*i) * 40, (*j) * 40);
+    (*i) * 32, (*j) * 32);
 }
 
 void	player_image(t_map *data, int *i, int *j)
 {
 	mlx_put_image_to_window(data->mlx, data->win, data->images->player, 
-    (*i) * 40, (*j) * 40);
+    (*i) * 32, (*j) * 32);
 	data->x = *i;
 	data->y = *j;
 }
@@ -38,9 +38,9 @@ void	ft_draw(t_map *data)
 	int	j;
 
 	i = 0;
-	j = 0;
 	while (data->map[i])
 	{
+		j = 0;
 		while (data->map[i][j])
 		{
 			if (data->map[i][j] == '1')
@@ -51,10 +51,10 @@ void	ft_draw(t_map *data)
 				player_image(data, &i, &j);
 			else if (data->map[i][j] == 'c')
 				mlx_put_image_to_window(data->mlx, data->win,
-					data->images->object, i * 40, j * 40);
+					data->images->object, i * 32, j * 32);
 			else if (data->map[i][j] == 'e')
 				mlx_put_image_to_window(data->mlx, data->win,
-					data->images->exit, i * 40, j * 40);
+					data->images->exit, i * 32, j * 32);
 			i++;
 		}
 		j++;

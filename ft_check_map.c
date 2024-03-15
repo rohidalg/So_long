@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:17:31 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/13 17:50:41 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/15 19:57:51 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void ft_check_outline(t_map *data)
     fail = 0;
     while (i < data->width)
     {
-        if (data->map[i][0] != '1' || data->map[i][data->hight - 1] != '1')
+        if (data->map[0][i] != '1' || data->map[data->hight - 1][i] != '1')
             fail = 1;
         i++;
     }
     i = 0;
     while (i < data->hight)
     {
-        if (data->map[0][i] != '1' || data->map[data->width - 1][i] != '1')
+        if (data->map[i][0] != '1' || data->map[i][data->width - 1] != '1')
             fail = 1;
         i++;
     }
@@ -53,10 +53,10 @@ void ft_check_char(t_map *data)
     int i;
     int j;
 
-    j = 0;
-    while(data->map[j])
+    i = 0;
+    while(data->map[i])
     {
-        i = 0;
+        j = 0;
         while(data->map[i][j])
         {
             if (data->map[i][j] != '1' && data->map[i][j] != '0' && 

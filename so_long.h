@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/13 17:22:02 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:03:03 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # define MLX_SYNC_WIN_FLUSH_CMD 2
 # define MLX_SYNC_WIN_CMD_COMPLETED 3
 
-# define PLAYER "./images/player.xpm"
-# define WALL "./images/wall.xpm"
-# define OBJECT "./images/object.xpm"
-# define FLOOR "./images/floor.xpm"
-# define EXIT "./images/exit.xpm"
+# define PLAYER "./imag/player.xpm"
+# define WALL "./imag/wall.xpm"
+# define OBJECT "./imag/object.xpm"
+# define FLOOR "./imag/floor.xpm"
+# define EXIT "./imag/exit.xpm"
 
 # define ESC 53
 # define W 13

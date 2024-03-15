@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/13 18:24:56 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/15 19:25:56 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,15 @@ void ft_reset(t_map *data, char *name)
 void ft_check_general(t_map *data)
 {
 	ft_check_ber(data);
+	write(1, "1\n", 3);
 	ft_check_outline(data);
+	write(1, "2\n", 3);
 	ft_check_char(data);
+	write(1, "3\n", 3);
 	ft_check_double(data);
+	write(1, "4\n", 3);
 	ft_check_pirate(data);
+	write(1, "5\n", 3);
 }
 
 int ft_frame(t_map *data)
@@ -70,7 +75,7 @@ int main (int words, char **arguments)
 		ft_map_size(&data);
 		ft_maplloc(&data);
 		ft_check_general(&data);
-		data.win = mlx_new_window(data.mlx, data.width * 40, data.hight * 40, "so_long");
+		data.win = mlx_new_window(data.mlx, data.width * 32, data.hight * 32, "so_long");
 		mlx_hook(data.win, 17, 0, ft_exit, &data);
 		mlx_hook(data.win, 02, 0, ft_press, &data);
 		mlx_loop_hook(data.mlx, ft_frame, &data);
