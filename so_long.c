@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/19 18:32:20 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/19 19:44:12 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,15 @@ void	ft_reset(t_map *data, char *name)
 void	ft_check_general(t_map *data)
 {
 	ft_check_ber(data);
+	write(1, "4.1\n", 5);
 	ft_check_outline(data);
+	write(1, "4.2\n", 5);
 	ft_check_char(data);
+	write(1, "4.3\n", 5);
 	ft_check_double(data);
+	write(1, "4.4\n", 5);
 	ft_check_pirate(data);
+	write(1, "4.5\n", 5);
 }
 
 int	ft_frame(t_map *data)
