@@ -6,13 +6,13 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:55:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/15 18:38:08 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:30:31 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void ft_bad_malloc(void)
+void	ft_bad_malloc(void)
 {
 	write(2, "\n\nMALLOC_ERROR_MAP\n\n", 21);
 	exit(EXIT_FAILURE);
@@ -23,7 +23,7 @@ void	ft_map_size(t_map *data)
 	char	*gnl;
 	char	strlen;
 	int		fd;
-	
+
 	fd = open(data->txt, O_RDONLY);
 	gnl = get_next_line(fd);
 	if (!gnl)
@@ -39,7 +39,7 @@ void	ft_map_size(t_map *data)
 		if ((int)strlen != data->width)
 		{
 			write(2, "Error\nMap not valid\n", 20);
-			exit (EXIT_FAILURE);
+			exit(EXIT_FAILURE);
 		}
 		data->hight++;
 		free(gnl);
@@ -49,15 +49,15 @@ void	ft_map_size(t_map *data)
 	close(fd);
 }
 
-void ft_maplloc(t_map *data)
+void	ft_maplloc(t_map *data)
 {
-	int fd;
-	char *gnl;
-	int i;
-	
+	int		fd;
+	char	*gnl;
+	int		i;
+
 	fd = open(data->txt, O_RDONLY);
 	i = 0;
-	data->map = (char **)malloc(sizeof (char *) * (data->hight + 1));
+	data->map = (char **)malloc(sizeof(char *) * (data->hight + 1));
 	if (!data->map)
 		ft_bad_malloc();
 	while (i < data->hight)

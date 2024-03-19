@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/15 17:03:03 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/19 18:32:45 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define OBJECT "./imag/object.xpm"
 # define FLOOR "./imag/floor.xpm"
 # define EXIT "./imag/exit.xpm"
+# define WIN "./imag/win.xpm"
 
 # define ESC 53
 # define W 13
@@ -42,6 +43,7 @@ typedef struct s_images
 	int				*object;
 	int				*floor;
 	int				*exit;
+	int				*win;
 }					t_images;
 
 typedef struct s_map
@@ -63,8 +65,8 @@ typedef struct s_map
 
 typedef struct s_checker
 {
-	int 			**map;
-	int 			coins_treasure;
+	int				**map;
+	int				coins_treasure;
 }					t_checker;
 
 void				ft_map_size(t_map *data);
@@ -79,18 +81,19 @@ int					ft_press(int keycode, t_map *data);
 int					ft_strcmp(char *s1, char *s2);
 void				ft_itoa(unsigned int n);
 int					ft_exit(t_map *data);
+void				ft_finish(t_map *data);
 void				wall_image(t_map *data, int *i, int *j);
 void				floor_image(t_map *data, int *i, int *j);
 void				player_image(t_map *data, int *i, int *j);
 void				ft_draw(t_map *data);
 void				ft_check_outline(t_map *data);
 void				ft_check_ber(t_map *data);
-void ft_check_char(t_map *data);
-void ft_check_double(t_map *data);
-void ft_check_pirate(t_map *data);
-void ft_malloc_map(t_checker *c, t_map *data);
-void ft_free_checker(t_checker *c, int hight);
-void ft_treasure_hunter(t_checker *c, t_map *data, int i, int j);
-void ft_is_posible(t_map *data, int i, int j, int treasure);
+void				ft_check_char(t_map *data);
+void				ft_check_double(t_map *data);
+void				ft_check_pirate(t_map *data);
+void				ft_malloc_map(t_checker *c, t_map *data);
+void				ft_free_checker(t_checker *c, int hight);
+void				ft_treasure_hunter(t_checker *c, t_map *data, int i, int j);
+void				ft_is_posible(t_map *data, int i, int j, int treasure);
 
 #endif
