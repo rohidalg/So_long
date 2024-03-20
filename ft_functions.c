@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:55:27 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/19 18:29:10 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:56:48 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ void	ft_itoa(unsigned int n)
 	write(1, &c, 1);
 }
 
-// void	ft_write_itoa(unsigned int n)
-// {
-// 	write(1, "Number of steps: ", 17);
-// 	ft_itoa(n);
-// 	write(1, "\n", 1);
-// }
+void	ft_write(unsigned int n)
+{
+	write(1, "Number of movements: ", 22);
+	ft_itoa(n);
+	write(1, "\n", 1);
+}

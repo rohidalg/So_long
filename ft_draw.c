@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:50:25 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/19 19:24:18 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/20 18:06:48 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ void	ft_draw(t_map *data)
 				wall_image(data, &j, &i);
 			else if (data->map[i][j] == '0')
 				floor_image(data, &j, &i);
-			else if (data->map[i][j] == 'p')
+			else if (data->map[i][j] == 'P')
 				player_image(data, &j, &i);
-			else if (data->map[i][j] == 'c')
+			else if (data->map[i][j] == 'C')
 				mlx_put_image_to_window(data->mlx, data->win,
 					data->images->object, j * 32, i * 32);
-			else if (data->map[i][j] == 'e')
+			else if (data->map[i][j] == 'E')
 				mlx_put_image_to_window(data->mlx, data->win,
 					data->images->exit, j * 32, i * 32);
 			j++;

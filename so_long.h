@@ -6,23 +6,20 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/19 19:20:49 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/20 19:30:20 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# define MLX_SYNC_IMAGE_WRITABLE 1
-# define MLX_SYNC_WIN_FLUSH_CMD 2
-# define MLX_SYNC_WIN_CMD_COMPLETED 3
-
-# define PLAYER "./imag/player.xpm"
-# define WALL "./imag/wall.xpm"
-# define OBJECT "./imag/object.xpm"
-# define FLOOR "./imag/floor.xpm"
-# define EXIT "./imag/exit.xpm"
-# define WIN "./imag/win.xpm"
+# define PLAYER "imag/player.xpm"
+# define WALL "imag/wall.xpm"
+# define OBJECT "imag/object.xpm"
+# define FLOOR "imag/floor.xpm"
+# define EXIT "imag/exit.xpm"
+# define WIN "imag/win.xpm"
+#define FINISH "imag/finish.xpm"
 
 # define ESC 53
 # define W 13
@@ -80,6 +77,7 @@ int					ft_press(int keycode, t_map *data);
 // char				*ft_strdup(char *s);
 int					ft_strcmp(char *s1, char *s2);
 void				ft_itoa(unsigned int n);
+void	ft_write(unsigned int n);
 int					ft_exit(t_map *data);
 void				ft_finish(t_map *data);
 void				wall_image(t_map *data, int *i, int *j);

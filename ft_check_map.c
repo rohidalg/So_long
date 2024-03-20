@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:17:31 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/19 18:27:38 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:33:18 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,23 +54,23 @@ void	ft_check_char(t_map *data)
 	int	i;
 	int	j;
 
-	i = 0;
-	while (data->map[i])
+	j = 0;
+	while (data->map[j])
 	{
-		j = 0;
-		while (data->map[i][j])
+		i = 0;
+		while (data->map[j][i])
 		{
-			if (data->map[i][j] != '1' && data->map[i][j] != '0'
-				&& data->map[i][j] != 'P' && data->map[i][j] != 'E'
-				&& data->map[i][j] != 'C')
+			if (data->map[j][i] != '1' && data->map[j][i] != '0'
+				&& data->map[j][i] != 'P' && data->map[j][i] != 'E'
+				&& data->map[j][i] != 'C')
 			{
 				write(2, "\n\nCHAR_ERROR\n\n", 15);
 				exit(EXIT_FAILURE);
 			}
 			else
-				j++;
+				i++;
 		}
-		i++;
+		j++;
 	}
 }
 

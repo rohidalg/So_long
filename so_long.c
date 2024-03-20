@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/19 19:44:12 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:50:51 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,7 @@ int	ft_frame(t_map *data)
 int	main(int words, char **arguments)
 {
 	t_map data;
-	int i;
-
-	i = 0;
+	
 	if (words == 2)
 	{
 		data.mlx = mlx_init();
