@@ -1,12 +1,24 @@
 NAME = so_long
 
+MK = make -s
+
+MKD = mkdir
+
+RM = rm -rf
+
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Werror 
+
+MLX_FLAGS = -g -Lmlx -lmlx -framework OpenGL -framework Appkit 
+
 HEADERS =	so_long.h \
 		./get_next_line/get_next_line.h \
 		mlx/mlx.h
 
 INCLUDES =	mlx/libmlx.a
 
-SOURCES =	ft_read_map.c	\
+SRCs =	ft_read_map.c	\
 		ft_check_map.c \
 		ft_check.c \
 		ft_draw.c \
@@ -17,13 +29,8 @@ SOURCES =	ft_read_map.c	\
 		get_next_line.c	\
 		so_long.c \
 
-DIR_OBJ	= objects
-OBJECTS = $(addprefix $(DIR_OBJ)/,$(SOURCES:%.c=%.o))
-
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g
-
-MLX_FLAGS = -g -Lmlx -lmlx -framework OpenGL -framework Appkit
+DIR_OBJs	= OBJECTS
+OBJs = $(addprefix $(DIR_OBJs)/,$(SRCs:%.c=%.o))
 
 
 vpath %.c sources get_next_line
@@ -31,29 +38,22 @@ vpath %.c sources get_next_line
 all	:	make_lib make_dir $(NAME)
 
 make_lib:
-		@make -C mlx
-		@echo "\n\n minilibx complete!\n\n"
+		$(MK) -C mlx
 
 make_dir:
-		@mkdir -p $(DIR_OBJ)
+		$(MKD) -p $(DIR_OBJs)
 
-$(DIR_OBJ)/%.o: %.c $(HEADERS) | make_dir
+$(DIR_OBJs)/%.o: %.c $(HEADERS) | make_dir
 		@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME)	:	$(OBJECTS) $(HEADERS)
-	@echo "Compiling so long"
-	@$(CC) $(CFLAGS) $(MLX_FLAGS) $(OBJECTS) $(INCLUDES) -o $(NAME)
-	@echo "Done!"
+$(NAME)	:	$(OBJs) $(HEADERS)
+	$(CC) $(CFLAGS) $(MLX_FLAGS) $(OBJs) $(INCLUDES) -o $(NAME)
 
 clean	:
-	@echo "Removing (so_long) objects..."
-	@make clean -C mlx
-	@rm -rf $(DIR_OBJ)
-	@echo "Done!"
+	$(MK) clean -C mlx
+	$(RM) $(DIR_OBJs)
 
 fclean	:	clean
-	@echo "Removing execute (so_long)..."
-	@rm -rf $(NAME)
-	@echo "Done!"
+	$(RM) $(NAME)
 
 re	:	fclean all

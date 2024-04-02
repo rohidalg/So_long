@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/20 19:30:20 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/02 20:28:31 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 # define SO_LONG_H
 
 # define PLAYER "imag/player.xpm"
-# define WALL "imag/wall.xpm"
+# define WALL "imag/wall1.xpm"
 # define OBJECT "imag/object.xpm"
 # define FLOOR "imag/floor.xpm"
 # define EXIT "imag/exit.xpm"
 # define WIN "imag/win.xpm"
-#define FINISH "imag/finish.xpm"
+// #define FINISH "imag/finish.xpm"
 
 # define ESC 53
 # define W 13

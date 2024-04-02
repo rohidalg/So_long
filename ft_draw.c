@@ -6,23 +6,11 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:50:25 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/20 18:06:48 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/02 20:06:16 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	wall_image(t_map *data, int *j, int *i)
-{
-	mlx_put_image_to_window(data->mlx, data->win, data->images->wall, (*j) * 32,
-		(*i) * 32);
-}
-
-void	floor_image(t_map *data, int *j, int *i)
-{
-	mlx_put_image_to_window(data->mlx, data->win, data->images->floor, (*j)
-		* 32, (*i) * 32);
-}
 
 void	player_image(t_map *data, int *j, int *i)
 {
@@ -30,6 +18,22 @@ void	player_image(t_map *data, int *j, int *i)
 		* 32, (*i) * 32);
 	data->x = *j;
 	data->y = *i;
+}
+
+void ft_paste(t_map *data, int *i, int *j)
+{
+	if (data->map[*i][*j] == '1')
+		mlx_put_image_to_window(data->mlx, data->win, data->images->wall, (*j) * 32, (*i) * 32);
+	else if (data->map[*i][*j] == '0')
+		mlx_put_image_to_window(data->mlx, data->win, data->images->floor, (*j) * 32, (*i) * 32);
+	else if (data->map[*i][*j] == 'P')
+		player_image(data, j, i);
+	else if (data->map[*i][*j] == 'C')
+		mlx_put_image_to_window(data->mlx, data->win, data->images->object, (*j) * 32, (*i) * 32);
+	else if (data->map[*i][*j] == 'E' && data->count != 0)
+		mlx_put_image_to_window(data->mlx, data->win, data->images->exit, (*j) * 32, (*i) * 32);
+	else 
+		mlx_put_image_to_window(data->mlx, data->win, data->images->win, (*j) * 32, (*i) * 32);
 }
 
 void	ft_draw(t_map *data)
@@ -43,18 +47,7 @@ void	ft_draw(t_map *data)
 		j = 0;
 		while (data->map[i][j])
 		{
-			if (data->map[i][j] == '1')
-				wall_image(data, &j, &i);
-			else if (data->map[i][j] == '0')
-				floor_image(data, &j, &i);
-			else if (data->map[i][j] == 'P')
-				player_image(data, &j, &i);
-			else if (data->map[i][j] == 'C')
-				mlx_put_image_to_window(data->mlx, data->win,
-					data->images->object, j * 32, i * 32);
-			else if (data->map[i][j] == 'E')
-				mlx_put_image_to_window(data->mlx, data->win,
-					data->images->exit, j * 32, i * 32);
+			ft_paste(data, &i, &j);
 			j++;
 		}
 		i++;
