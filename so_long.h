@@ -6,20 +6,20 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/02 20:28:31 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/03 19:59:09 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# define PLAYER "imag/player.xpm"
-# define WALL "imag/wall1.xpm"
-# define OBJECT "imag/object.xpm"
-# define FLOOR "imag/floor.xpm"
-# define EXIT "imag/exit.xpm"
-# define WIN "imag/win.xpm"
-// #define FINISH "imag/finish.xpm"
+# define PLAYER "imag/player60.xpm"
+# define WALL "imag/wall60.xpm"
+# define OBJECT "imag/object60.xpm"
+# define FLOOR "imag/floor60.xpm"
+# define EXIT "imag/exit60.xpm"
+# define WIN "imag/win60.xpm"
+#define FINISH "imag/finish.png"
 
 # define ESC 53
 # define W 13
@@ -41,6 +41,7 @@ typedef struct s_images
 	int				*floor;
 	int				*exit;
 	int				*win;
+	int 			*finish;
 }					t_images;
 
 typedef struct s_map

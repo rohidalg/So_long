@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:50:25 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/02 20:06:16 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/03 19:59:57 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	player_image(t_map *data, int *j, int *i)
 {
 	mlx_put_image_to_window(data->mlx, data->win, data->images->player, (*j)
-		* 32, (*i) * 32);
+		* 60, (*i) * 60);
 	data->x = *j;
 	data->y = *i;
 }
@@ -23,17 +23,17 @@ void	player_image(t_map *data, int *j, int *i)
 void ft_paste(t_map *data, int *i, int *j)
 {
 	if (data->map[*i][*j] == '1')
-		mlx_put_image_to_window(data->mlx, data->win, data->images->wall, (*j) * 32, (*i) * 32);
+		mlx_put_image_to_window(data->mlx, data->win, data->images->wall, (*j) * 60, (*i) * 60);
 	else if (data->map[*i][*j] == '0')
-		mlx_put_image_to_window(data->mlx, data->win, data->images->floor, (*j) * 32, (*i) * 32);
+		mlx_put_image_to_window(data->mlx, data->win, data->images->floor, (*j) * 60, (*i) * 60);
 	else if (data->map[*i][*j] == 'P')
 		player_image(data, j, i);
 	else if (data->map[*i][*j] == 'C')
-		mlx_put_image_to_window(data->mlx, data->win, data->images->object, (*j) * 32, (*i) * 32);
+		mlx_put_image_to_window(data->mlx, data->win, data->images->object, (*j) * 60, (*i) * 60);
 	else if (data->map[*i][*j] == 'E' && data->count != 0)
-		mlx_put_image_to_window(data->mlx, data->win, data->images->exit, (*j) * 32, (*i) * 32);
+		mlx_put_image_to_window(data->mlx, data->win, data->images->exit, (*j) * 60, (*i) * 60);
 	else 
-		mlx_put_image_to_window(data->mlx, data->win, data->images->win, (*j) * 32, (*i) * 32);
+		mlx_put_image_to_window(data->mlx, data->win, data->images->win, (*j) * 60, (*i) * 60);
 }
 
 void	ft_draw(t_map *data)

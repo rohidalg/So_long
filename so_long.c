@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/02 19:45:53 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/03 20:00:10 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,10 @@ void	ft_reset(t_map *data, char *name)
 void	ft_check_general(t_map *data)
 {
 	ft_check_ber(data);
-	write(1, "4.1\n", 5);
 	ft_check_outline(data);
-	write(1, "4.2\n", 5);
 	ft_check_char(data);
-	write(1, "4.3\n", 5);
 	ft_check_double(data);
-	write(1, "4.4\n", 5);
 	ft_check_pirate(data);
-	write(1, "4.5\n", 5);
 }
 
 int	ft_frame(t_map *data)
@@ -70,26 +65,16 @@ int	main(int words, char **arguments)
 	if (words == 2)
 	{
 		data.mlx = mlx_init();
-		write(1, "1\n", 3);
 		ft_reset(&data, arguments[1]);
-		write(1, "2\n", 3);
 		ft_map_size(&data);
-		write(1, "3\n", 3);
 		ft_maplloc(&data);
-		write(1, "4\n", 3);
 		ft_check_general(&data);
-		write(1, "5\n", 3);
-		data.win = mlx_new_window(data.mlx, data.width * 32, data.hight * 32,
+		data.win = mlx_new_window(data.mlx, data.width * 60, data.hight * 60,
 			"so_long");
-		write(1, "6\n", 3);
 		mlx_hook(data.win, 17, 0, ft_exit, &data);
-		write(1, "7\n", 3);
 		mlx_hook(data.win, 02, 0, ft_press, &data);
-		write(1, "8\n", 3);
 		mlx_loop_hook(data.mlx, ft_frame, &data);
-		write(1, "9\n", 3);
 		mlx_loop(data.mlx);
-		write(1, "10\n", 3);
 	}
 	return (0);
 }

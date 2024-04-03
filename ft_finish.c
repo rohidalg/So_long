@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:23:56 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/02 16:58:45 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/03 19:12:42 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	ft_exit(t_map *data)
 void	ft_finish(t_map *data)
 {
 	mlx_clear_window(data->mlx, data->win);
-	mlx_put_image_to_window(data->mlx, data->win, data->images->win, data->width
-		* 32 / 2.4, data->hight * 32 / 4);
+	printf("\n\nYOU WIN\n\n");
+	exit(EXIT_FAILURE);
 }
