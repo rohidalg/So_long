@@ -6,37 +6,11 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:55:27 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/20 16:56:48 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:10:29 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-// char *ft_strcpy(char *s1, char *s2)
-// {
-//     int i;
-
-//     i = -1;
-//     while (s2[i++])
-//     {
-//         s1[i] = s2[i];
-//     s1[i] = '\0';
-//     return (s1);
-//     }
-// }
-
-// char *ft_strdup(char *s)
-// {
-//     char *dup;
-//     int i;
-
-//     dup = malloc(sizeof(char) * (ft_strlen(s) + 1));
-//     i = 0;
-//     if (!dup)
-//         return(0);
-//     ft_strcpy(dup, s);
-//     return (dup);
-// }
 
 int	ft_strcmp(char *s1, char *s2)
 {

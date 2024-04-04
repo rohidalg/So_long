@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/03 20:00:10 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:16:10 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	ft_frame(t_map *data)
 
 int	main(int words, char **arguments)
 {
-	t_map data;
-	
+	t_map	data;
+
 	if (words == 2)
 	{
 		data.mlx = mlx_init();
@@ -70,7 +70,7 @@ int	main(int words, char **arguments)
 		ft_maplloc(&data);
 		ft_check_general(&data);
 		data.win = mlx_new_window(data.mlx, data.width * 60, data.hight * 60,
-			"so_long");
+				"so_long");
 		mlx_hook(data.win, 17, 0, ft_exit, &data);
 		mlx_hook(data.win, 02, 0, ft_press, &data);
 		mlx_loop_hook(data.mlx, ft_frame, &data);

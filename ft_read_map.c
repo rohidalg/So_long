@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:55:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/19 18:30:31 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:13:16 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_bad_malloc(void)
 void	ft_map_size(t_map *data)
 {
 	char	*gnl;
-	char	strlen;
 	int		fd;
 
 	fd = open(data->txt, O_RDONLY);
@@ -31,12 +30,11 @@ void	ft_map_size(t_map *data)
 		write(2, "\n\nERROR_READ_MAP\n\n", 19);
 		exit(EXIT_FAILURE);
 	}
-	strlen = ft_strlen(gnl) - 1;
-	data->width = strlen;
+	data->width = ft_strlen(gnl) - 1;
 	data->hight = 0;
 	while (gnl)
 	{
-		if ((int)strlen != data->width)
+		if ((int)ft_strlen(gnl) - 1 != data->width)
 		{
 			write(2, "Error\nMap not valid\n", 20);
 			exit(EXIT_FAILURE);

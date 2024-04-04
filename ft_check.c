@@ -6,11 +6,11 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:52:31 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/03/20 17:11:13 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:16:55 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "so_long.h"
+#include "so_long.h"
 
 void	ft_malloc_map(t_checker *c, t_map *data)
 {
@@ -61,7 +61,7 @@ void	ft_treasure_hunter(t_checker *c, t_map *data, int i, int j)
 
 void	ft_is_posible(t_map *data, int j, int i, int treasure)
 {
-	t_checker c;
+	t_checker	c;
 
 	c.coins_treasure = treasure;
 	ft_malloc_map(&c, data);

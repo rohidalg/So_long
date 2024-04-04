@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/03 19:59:09 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:17:41 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define FLOOR "imag/floor60.xpm"
 # define EXIT "imag/exit60.xpm"
 # define WIN "imag/win60.xpm"
-#define FINISH "imag/finish.png"
+# define FINISH "imag/finish.png"
 
 # define ESC 53
 # define W 13
@@ -41,7 +41,7 @@ typedef struct s_images
 	int				*floor;
 	int				*exit;
 	int				*win;
-	int 			*finish;
+	int				*finish;
 }					t_images;
 
 typedef struct s_map
@@ -74,11 +74,9 @@ void				ft_move_a(t_map *data);
 void				ft_move_s(t_map *data);
 void				ft_move_d(t_map *data);
 int					ft_press(int keycode, t_map *data);
-// char				*ft_strcpy(char *s1, char *s2);
-// char				*ft_strdup(char *s);
 int					ft_strcmp(char *s1, char *s2);
 void				ft_itoa(unsigned int n);
-void	ft_write(unsigned int n);
+void				ft_write(unsigned int n);
 int					ft_exit(t_map *data);
 void				ft_finish(t_map *data);
 void				wall_image(t_map *data, int *i, int *j);
