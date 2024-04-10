@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/04 18:45:14 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:22:08 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,23 @@ void	ft_load_image(t_map *data)
 	data->images->wall = mlx_xpm_file_to_image(data->mlx, WALL, &hig, &wid);
 	data->images->object = mlx_xpm_file_to_image(data->mlx, OBJECT, &hig, &wid);
 	data->images->floor = mlx_xpm_file_to_image(data->mlx, FLOOR, &hig, &wid);
+	data->images->monster = mlx_xpm_file_to_image(data->mlx, MONSTER, &hig, &wid);
 	data->images->exit = mlx_xpm_file_to_image(data->mlx, EXIT, &hig, &wid);
 	data->images->win = mlx_xpm_file_to_image(data->mlx, WIN, &hig, &wid);
-	data->images->win = mlx_xpm_file_to_image(data->mlx, MONSTER, &hig, &wid);
+	data->images->pa1 = mlx_xpm_file_to_image(data->mlx, PA1, &hig, &wid);
+	data->images->pa2 = mlx_xpm_file_to_image(data->mlx, PA2, &hig, &wid);
+	data->images->pa3 = mlx_xpm_file_to_image(data->mlx, PA3, &hig, &wid);
+	data->images->pa4 = mlx_xpm_file_to_image(data->mlx, PA4, &hig, &wid);
+	data->images->pa5 = mlx_xpm_file_to_image(data->mlx, PA5, &hig, &wid);
+	data->images->pa6 = mlx_xpm_file_to_image(data->mlx, PA6, &hig, &wid);
+	data->images->pa7 = mlx_xpm_file_to_image(data->mlx, PA7, &hig, &wid);
+	data->images->pd1 = mlx_xpm_file_to_image(data->mlx, PD1, &hig, &wid);
+	data->images->pd2 = mlx_xpm_file_to_image(data->mlx, PD2, &hig, &wid);
+	data->images->pd3 = mlx_xpm_file_to_image(data->mlx, PD3, &hig, &wid);
+	data->images->pd4 = mlx_xpm_file_to_image(data->mlx, PD4, &hig, &wid);
+	data->images->pd5 = mlx_xpm_file_to_image(data->mlx, PD5, &hig, &wid);
+	data->images->pd6 = mlx_xpm_file_to_image(data->mlx, PD6, &hig, &wid);
+	data->images->pd7 = mlx_xpm_file_to_image(data->mlx, PD7, &hig, &wid);
 }
 
 void	ft_reset(t_map *data, char *name)
@@ -36,8 +50,10 @@ void	ft_reset(t_map *data, char *name)
 	data->player = 0;
 	data->monster = 0;
 	data->count = 0;
+	data->end = 0;
 	data->finish = 0;
 	data->move = 0;
+	data->frame = 0;
 	data->txt = name;
 	ft_load_image(data);
 }
@@ -48,11 +64,12 @@ void	ft_check_general(t_map *data)
 	ft_check_outline(data);
 	ft_check_char(data);
 	ft_check_double(data);
-	ft_check_pirate(data);
+	ft_check_countchar(data);
 }
 
 int	ft_frame(t_map *data)
 {
+	data->frame++;
 	mlx_clear_window(data->mlx, data->win);
 	ft_draw(data);
 	if (data->count == 0 && data->player == 1 && data->finish == 1)
@@ -67,7 +84,7 @@ int	main(int words, char **arguments)
 	if (words == 2)
 	{
 		data.mlx = mlx_init();
-		ft_reset(&data, arguments[1]);
+		ft_reset(&data, arguments[1]);    
 		ft_map_size(&data);
 		ft_maplloc(&data);
 		ft_check_general(&data);

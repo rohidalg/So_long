@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:17:31 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/04 18:48:38 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/09 17:08:25 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,8 @@ void	ft_check_double(t_map *data)
 {
 	int	i;
 	int	j;
-	int	end;
 
 	j = -1;
-	end = 0;
 	while (data->map[++j])
 	{
 		i = -1;
@@ -90,21 +88,21 @@ void	ft_check_double(t_map *data)
 			if (data->map[j][i] == 'P')
 				data->player++;
 			if (data->map[j][i] == 'E')
-				end++;
+				data->end++;
 			if (data->map[j][i] == 'C')
 				data->count++;
-			// if (data->map[j][i] == 'M')
-			// 	data->monster++;
+			if (data->map[j][i] == 'M')
+			 	data->monster++;
 		}
 	}
-	if (data->player != 1 || /*data->monster < 1 ||*/ end != 1 || data->count < 1)
+	if (data->player != 1 || data->monster < 1 || data->end != 1 || data->count < 1)
 	{
 		write(2, "\n\nDOUBLE_ERROR\n\n", 17);
 		exit(EXIT_FAILURE);
 	}
 }
 
-void	ft_check_pirate(t_map *data)
+void	ft_check_countchar(t_map *data)
 {
 	int	i[2];
 	int	j[2];
@@ -122,7 +120,7 @@ void	ft_check_pirate(t_map *data)
 				j[0] = i[0];
 				j[1] = i[1];
 			}
-			if (data->map[i[0]][i[1]] == 'C' || data->map[i[0]][i[1]] == 'E' || data->map[i[0]][i[1]] == 'M')
+			if (data->map[i[0]][i[1]] == 'C' || data->map[i[0]][i[1]] == 'E')
 				treasure++;
 		}
 	}

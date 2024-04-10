@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:22:47 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/04 17:29:50 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:55:18 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_move_w(t_map *data)
 	if (data->map[data->y - 1][data->x] != '1' && data->map[data->y
 		- 1][data->x] != 'E')
 	{
-		if (data->map[data->y - 1][data->x] == 'C' || data->map[data->y
+		if (data->map[data->y - 1][data->x] == 'M')
+			ft_dead(data);
+		else if (data->map[data->y - 1][data->x] == 'C' || data->map[data->y
 			- 1][data->x] == '0')
 		{
 			if (data->map[data->y - 1][data->x] == 'C')
@@ -38,9 +40,13 @@ void	ft_move_a(t_map *data)
 	if (data->map[data->y][data->x - 1] != '1' && data->map[data->y][data->x
 		- 1] != 'E')
 	{
-		if (data->map[data->y][data->x - 1] == 'C' || data->map[data->y][data->x
+		if (data->map[data->y][data->x - 1] == 'M')
+			ft_dead(data);
+		else if (data->map[data->y][data->x - 1] == 'C' || data->map[data->y][data->x
 			- 1] == '0')
 		{
+			ft_frame_left(data, &data->x, &data->y);
+			data->frame = 0;
 			if (data->map[data->y][data->x - 1] == 'C')
 				data->count--;
 			data->map[data->y][data->x] = '0';
@@ -59,7 +65,9 @@ void	ft_move_s(t_map *data)
 	if (data->map[data->y + 1][data->x] != '1' && data->map[data->y
 		+ 1][data->x] != 'E')
 	{
-		if (data->map[data->y + 1][data->x] == 'C' || data->map[data->y
+		if (data->map[data->y + 1][data->x] == 'M')
+			ft_dead(data);
+		else if (data->map[data->y + 1][data->x] == 'C' || data->map[data->y
 			+ 1][data->x] == '0')
 		{
 			if (data->map[data->y + 1][data->x] == 'C')
@@ -80,9 +88,13 @@ void	ft_move_d(t_map *data)
 	if (data->map[data->y][data->x + 1] != '1' && data->map[data->y][data->x
 		+ 1] != 'E')
 	{
-		if (data->map[data->y][data->x + 1] == 'C' || data->map[data->y][data->x
+		if (data->map[data->y][data->x + 1] == 'M')
+			ft_dead(data);
+		else if (data->map[data->y][data->x + 1] == 'C' || data->map[data->y][data->x
 			+ 1] == '0')
 		{
+			ft_frame_right(data, &data->x, &data->y);
+			data->frame = 0;
 			if (data->map[data->y][data->x + 1] == 'C')
 				data->count--;
 			data->map[data->y][data->x] = '0';

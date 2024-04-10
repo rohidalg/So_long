@@ -28,6 +28,7 @@ BSRCs =	ft_read_map.c	\
 		get_next_line_utils.c \
 		get_next_line.c	\
 		so_long_bonus.c \
+		ft_frame.c \
 
 DIR_BOBJs	= BONUS_OBJECTS
 BOBJs = $(addprefix $(DIR_BOBJs)/,$(BSRCs:%.c=%.o))
