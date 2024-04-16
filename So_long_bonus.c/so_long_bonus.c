@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/10 18:22:08 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:04:12 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ void	ft_load_image(t_map *data)
 	data->images->pd5 = mlx_xpm_file_to_image(data->mlx, PD5, &hig, &wid);
 	data->images->pd6 = mlx_xpm_file_to_image(data->mlx, PD6, &hig, &wid);
 	data->images->pd7 = mlx_xpm_file_to_image(data->mlx, PD7, &hig, &wid);
+	data->images->pm1 = mlx_xpm_file_to_image(data->mlx, PM1, &hig, &wid);
+	data->images->pm2 = mlx_xpm_file_to_image(data->mlx, PM2, &hig, &wid);
+	data->images->pm3 = mlx_xpm_file_to_image(data->mlx, PM3, &hig, &wid);
+	data->images->pm4 = mlx_xpm_file_to_image(data->mlx, PM4, &hig, &wid);
 }
 
 void	ft_reset(t_map *data, char *name)
@@ -69,9 +73,9 @@ void	ft_check_general(t_map *data)
 
 int	ft_frame(t_map *data)
 {
-	data->frame++;
 	mlx_clear_window(data->mlx, data->win);
 	ft_draw(data);
+	data->frame++;
 	if (data->count == 0 && data->player == 1 && data->finish == 1)
 		ft_finish(data);
 	return (0);
@@ -93,6 +97,7 @@ int	main(int words, char **arguments)
 		mlx_hook(data.win, 17, 0, ft_exit, &data);
 		mlx_hook(data.win, 02, 0, ft_press, &data);
 		mlx_loop_hook(data.mlx, ft_frame, &data);
+
 		mlx_loop(data.mlx);
 	}
 	return (0);

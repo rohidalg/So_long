@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/10 17:35:37 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/16 19:11:40 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@
 # define PD5 "imag/player/playerd5.xpm"
 # define PD6 "imag/player/playerd6.xpm"
 # define PD7 "imag/player/playerd7.xpm"
+# define PM1 "imag/player/playerm1.xpm"
+# define PM2 "imag/player/playerm2.xpm"
+# define PM3 "imag/player/playerm3.xpm"
+# define PM4 "imag/player/playerm4.xpm"
 
 
 # define ESC 53
@@ -71,6 +75,10 @@ typedef struct s_images
 	int 			*pd5;
 	int 			*pd6;
 	int 			*pd7;
+	int 			*pm1;
+	int 			*pm2;
+	int 			*pm3;
+	int 			*pm4;
 }					t_images;
 
 typedef struct s_map
@@ -125,5 +133,7 @@ void				ft_char_hunter(t_checker *c, t_map *data, int i, int j);
 void				ft_is_posible(t_map *data, int i, int j, int treasure);
 void ft_frame_left(t_map *data, int *j, int *i);
 void ft_frame_right(t_map *data, int *j, int *i);
+void ft_stopp(t_map *data, int *j, int *i);
+void ft_spritep(t_map *data, int *j, int *i);
 
 #endif

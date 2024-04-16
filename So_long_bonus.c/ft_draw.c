@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:50:25 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/10 18:25:17 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/16 20:19:27 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@
 
 void	ft_player_image(t_map *data, int *j, int *i)
 {
-	mlx_put_image_to_window(data->mlx, data->win, data->images->player, (*j)
-		* 60, (*i) * 60);
+	ft_spritep(data, j, i);
 	data->x = *j;
 	data->y = *i;
 }

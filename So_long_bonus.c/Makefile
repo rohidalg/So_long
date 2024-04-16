@@ -8,7 +8,7 @@ RM = rm -rf
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 
 MLX_FLAGS = -g -Lmlx -lmlx -framework OpenGL -framework Appkit 
 
