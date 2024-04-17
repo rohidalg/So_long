@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:22:47 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/16 20:24:24 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:34:33 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_move_w(t_map *data)
 {
+	ft_reset_dir(data);
 	if (data->map[data->y - 1][data->x] != '1' && data->map[data->y
 		- 1][data->x] != 'E')
 	{
@@ -38,6 +39,7 @@ void	ft_move_w(t_map *data)
 
 void	ft_move_a(t_map *data)
 {
+	ft_reset_dir(data);
 	if (data->map[data->y][data->x - 1] != '1' && data->map[data->y][data->x
 		- 1] != 'E')
 	{
@@ -57,11 +59,13 @@ void	ft_move_a(t_map *data)
 	}
 	else if (data->map[data->y][data->x - 1] == 'E' && data->count == 0)
 		data->finish = 1;
+	data->left = 1;
 	data->frame = 0;
 }
 
 void	ft_move_s(t_map *data)
 {
+	ft_reset_dir(data);
 	if (data->map[data->y + 1][data->x] != '1' && data->map[data->y
 		+ 1][data->x] != 'E')
 	{
@@ -86,6 +90,7 @@ void	ft_move_s(t_map *data)
 
 void	ft_move_d(t_map *data)
 {
+	ft_reset_dir(data);
 	if (data->map[data->y][data->x + 1] != '1' && data->map[data->y][data->x
 		+ 1] != 'E')
 	{
@@ -105,6 +110,7 @@ void	ft_move_d(t_map *data)
 	}
 	else if (data->map[data->y][data->x + 1] == 'E' && data->count == 0)
 		data->finish = 1;
+	data->right = 1;
 	data->frame = 0;
 }
 
@@ -119,6 +125,6 @@ int	ft_press(int keycode, t_map *data)
 	else if (keycode == S && data->finish == 0)
 		ft_move_s(data);
 	else if (keycode == D && data->finish == 0)
-		ft_move_d(data); 
+		ft_move_d(data);
 	return (0);
 }

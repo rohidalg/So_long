@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/16 20:04:12 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:37:06 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,16 @@ void	ft_reset(t_map *data, char *name)
 	data->finish = 0;
 	data->move = 0;
 	data->frame = 0;
+	ft_reset_dir(data);
 	data->txt = name;
 	ft_load_image(data);
+}
+void ft_reset_dir(t_map *data)
+{
+	data->up = 0;
+	data->down = 0;
+	data->left = 0;
+	data->right = 0;
 }
 
 void	ft_check_general(t_map *data)

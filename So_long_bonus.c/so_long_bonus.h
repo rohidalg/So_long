@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/16 19:11:40 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:33:04 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,10 @@ typedef struct s_map
 	int				width;
 	int				x;
 	int				y;
+	int 			up;
+	int 			down;
+	int 			left;
+	int 			right;
 	int				player;
 	int				count;
 	int 			end;
@@ -135,5 +139,6 @@ void ft_frame_left(t_map *data, int *j, int *i);
 void ft_frame_right(t_map *data, int *j, int *i);
 void ft_stopp(t_map *data, int *j, int *i);
 void ft_spritep(t_map *data, int *j, int *i);
+void ft_reset_dir(t_map *data);
 
 #endif
