@@ -6,43 +6,11 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:50:25 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/17 15:02:55 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:18:45 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
-
-// void 	ft_sprite(t_map *data, int *j, int *i)
-// {
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pa1, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pa2, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pa3, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pa4, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pa5, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pa6, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pa7, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pd1, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pd2, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pd3, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pd4, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pd5, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pd6, (*j)
-// 		* 60, (*i) * 60);
-// 	mlx_put_image_to_window(data->mlx, data->win, data->images->pd7, (*j)
-// 		* 60, (*i) * 60);
-// }
 
 void	ft_player_image(t_map *data, int *j, int *i)
 {

@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/17 16:37:06 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:31:46 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ void	ft_load_image(t_map *data)
 	data->images->pm2 = mlx_xpm_file_to_image(data->mlx, PM2, &hig, &wid);
 	data->images->pm3 = mlx_xpm_file_to_image(data->mlx, PM3, &hig, &wid);
 	data->images->pm4 = mlx_xpm_file_to_image(data->mlx, PM4, &hig, &wid);
+	data->images->pud = mlx_xpm_file_to_image(data->mlx, PUD, &hig, &wid);
+	data->images->pud1 = mlx_xpm_file_to_image(data->mlx, PUD1, &hig, &wid);
+	data->images->pud2 = mlx_xpm_file_to_image(data->mlx, PUD2, &hig, &wid);
+	data->images->pud3 = mlx_xpm_file_to_image(data->mlx, PUD3, &hig, &wid);
+	data->images->pud4 = mlx_xpm_file_to_image(data->mlx, PUD4, &hig, &wid);
 }
 
 void	ft_reset(t_map *data, char *name)
@@ -64,8 +69,7 @@ void	ft_reset(t_map *data, char *name)
 }
 void ft_reset_dir(t_map *data)
 {
-	data->up = 0;
-	data->down = 0;
+	data->updown = 0;
 	data->left = 0;
 	data->right = 0;
 }
@@ -83,6 +87,7 @@ int	ft_frame(t_map *data)
 {
 	mlx_clear_window(data->mlx, data->win);
 	ft_draw(data);
+	ft_write(data);
 	data->frame++;
 	if (data->count == 0 && data->player == 1 && data->finish == 1)
 		ft_finish(data);

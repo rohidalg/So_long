@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/17 16:33:04 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:58:49 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@
 # define PM2 "imag/player/playerm2.xpm"
 # define PM3 "imag/player/playerm3.xpm"
 # define PM4 "imag/player/playerm4.xpm"
+# define PUD "imag/player/playerud.xpm"
+# define PUD1 "imag/player/playerud1.xpm"
+# define PUD2 "imag/player/playerud2.xpm"
+# define PUD3 "imag/player/playerud3.xpm"
+# define PUD4 "imag/player/playerud4.xpm"
 
 
 # define ESC 53
@@ -79,6 +84,11 @@ typedef struct s_images
 	int 			*pm2;
 	int 			*pm3;
 	int 			*pm4;
+	int 			*pud;
+	int 			*pud1;
+	int 			*pud2;
+	int 			*pud3;
+	int 			*pud4;
 }					t_images;
 
 typedef struct s_map
@@ -87,8 +97,7 @@ typedef struct s_map
 	int				width;
 	int				x;
 	int				y;
-	int 			up;
-	int 			down;
+	int 			updown;
 	int 			left;
 	int 			right;
 	int				player;
@@ -119,8 +128,8 @@ void				ft_move_s(t_map *data);
 void				ft_move_d(t_map *data);
 int					ft_press(int keycode, t_map *data);
 int					ft_strcmp(char *s1, char *s2);
-void				ft_itoa(unsigned int n);
-void				ft_write(unsigned int n);
+int ft_itoa(unsigned int n);
+void	ft_write(t_map *data);
 int					ft_exit(t_map *data);
 void				ft_finish(t_map *data);
 void 				ft_dead(t_map *data);

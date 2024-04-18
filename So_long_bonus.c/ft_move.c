@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:22:47 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/17 16:34:33 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/18 20:32:57 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	ft_move_w(t_map *data)
 		}
 		data->y--;
 		data->move++;
-		ft_write(data->move);
 	}
 	else if (data->map[data->y - 1][data->x] == 'E' && data->count == 0)
 		data->finish = 1;
+	data->updown = 1;
 	data->frame = 0;
 }
 
@@ -54,8 +54,7 @@ void	ft_move_a(t_map *data)
 			data->map[data->y][data->x - 1] = 'P';
 		}
 		data->x--;
-		data->move++;
-		ft_write(data->move);
+		data->move++;		
 	}
 	else if (data->map[data->y][data->x - 1] == 'E' && data->count == 0)
 		data->finish = 1;
@@ -81,10 +80,10 @@ void	ft_move_s(t_map *data)
 		}
 		data->y++;
 		data->move++;
-		ft_write(data->move);
 	}
 	else if (data->map[data->y + 1][data->x] == 'E' && data->count == 0)
 		data->finish = 1;
+	data->updown = 1;
 	data->frame = 0;
 }
 
@@ -106,7 +105,6 @@ void	ft_move_d(t_map *data)
 		}
 		data->x++;
 		data->move++;
-		ft_write(data->move);
 	}
 	else if (data->map[data->y][data->x + 1] == 'E' && data->count == 0)
 		data->finish = 1;
