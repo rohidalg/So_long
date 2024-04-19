@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:22:47 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/18 20:32:57 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:23:14 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	ft_move_a(t_map *data)
 	{
 		if (data->map[data->y][data->x - 1] == 'M')
 			ft_dead(data);
-		else if (data->map[data->y][data->x - 1] == 'C' || data->map[data->y][data->x
-			- 1] == '0')
+		else if (data->map[data->y][data->x - 1] == 'C'
+			|| data->map[data->y][data->x - 1] == '0')
 		{
 			if (data->map[data->y][data->x - 1] == 'C')
 				data->count--;
@@ -54,7 +54,7 @@ void	ft_move_a(t_map *data)
 			data->map[data->y][data->x - 1] = 'P';
 		}
 		data->x--;
-		data->move++;		
+		data->move++;
 	}
 	else if (data->map[data->y][data->x - 1] == 'E' && data->count == 0)
 		data->finish = 1;
@@ -95,8 +95,8 @@ void	ft_move_d(t_map *data)
 	{
 		if (data->map[data->y][data->x + 1] == 'M')
 			ft_dead(data);
-		else if (data->map[data->y][data->x + 1] == 'C' || data->map[data->y][data->x
-			+ 1] == '0')
+		else if (data->map[data->y][data->x + 1] == 'C'
+			|| data->map[data->y][data->x + 1] == '0')
 		{
 			if (data->map[data->y][data->x + 1] == 'C')
 				data->count--;

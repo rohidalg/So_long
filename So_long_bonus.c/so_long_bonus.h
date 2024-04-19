@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/19 16:19:28 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:43:21 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@
 # define PUD3 "imag/player/playerud3.xpm"
 # define PUD4 "imag/player/playerud4.xpm"
 
-
 # define ESC 53
 # define W 13
 # define A 0
@@ -65,30 +64,30 @@ typedef struct s_images
 	int				*floor;
 	int				*exit;
 	int				*win;
-	int 			*monster;
-	int 			*pa1;
-	int 			*pa2;
-	int 			*pa3;
-	int 			*pa4;
-	int 			*pa5;
-	int 			*pa6;
-	int 			*pa7;
-	int 			*pd1;
-	int 			*pd2;
-	int 			*pd3;
-	int 			*pd4;
-	int 			*pd5;
-	int 			*pd6;
-	int 			*pd7;
-	int 			*pm1;
-	int 			*pm2;
-	int 			*pm3;
-	int 			*pm4;
-	int 			*pud;
-	int 			*pud1;
-	int 			*pud2;
-	int 			*pud3;
-	int 			*pud4;
+	int				*monster;
+	int				*pa1;
+	int				*pa2;
+	int				*pa3;
+	int				*pa4;
+	int				*pa5;
+	int				*pa6;
+	int				*pa7;
+	int				*pd1;
+	int				*pd2;
+	int				*pd3;
+	int				*pd4;
+	int				*pd5;
+	int				*pd6;
+	int				*pd7;
+	int				*pm1;
+	int				*pm2;
+	int				*pm3;
+	int				*pm4;
+	int				*pud;
+	int				*pud1;
+	int				*pud2;
+	int				*pud3;
+	int				*pud4;
 }					t_images;
 
 typedef struct s_map
@@ -97,16 +96,16 @@ typedef struct s_map
 	int				width;
 	int				x;
 	int				y;
-	int 			updown;
-	int 			left;
-	int 			right;
+	int				updown;
+	int				left;
+	int				right;
 	int				player;
 	int				count;
-	int 			end;
+	int				end;
 	int				finish;
-	int 			monster;
+	int				monster;
 	unsigned int	move;
-	unsigned int 	frame;
+	unsigned int	frame;
 	char			*txt;
 	char			**map;
 	void			*mlx;
@@ -128,12 +127,12 @@ void				ft_move_s(t_map *data);
 void				ft_move_d(t_map *data);
 int					ft_press(int keycode, t_map *data);
 int					ft_strcmp(char *s1, char *s2);
-int	ft_numlen(int n, int base);
-char	*ft_itoa(int n);
-void	ft_write(t_map *data);
+int					ft_numlen(int n, int base);
+char				*ft_itoa(int n);
+void				ft_write(t_map *data);
 int					ft_exit(t_map *data);
 void				ft_finish(t_map *data);
-void 				ft_dead(t_map *data);
+void				ft_dead(t_map *data);
 void				ft_player_image(t_map *data, int *i, int *j);
 void				ft_draw(t_map *data);
 void				ft_check_outline(t_map *data);
@@ -145,10 +144,11 @@ void				ft_malloc_map(t_checker *c, t_map *data);
 void				ft_free_checker(t_checker *c, int hight);
 void				ft_char_hunter(t_checker *c, t_map *data, int i, int j);
 void				ft_is_posible(t_map *data, int i, int j, int treasure);
-void ft_frame_left(t_map *data, int *j, int *i);
-void ft_frame_right(t_map *data, int *j, int *i);
-void ft_stopp(t_map *data, int *j, int *i);
-void ft_spritep(t_map *data, int *j, int *i);
-void ft_reset_dir(t_map *data);
+void				ft_load_image(t_map *data);
+void				ft_frame_left(t_map *data, int *j, int *i);
+void				ft_frame_right(t_map *data, int *j, int *i);
+void				ft_stopp(t_map *data, int *j, int *i);
+void				ft_spritep(t_map *data, int *j, int *i);
+void				ft_reset_dir(t_map *data);
 
 #endif

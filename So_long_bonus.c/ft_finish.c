@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:23:56 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/09 17:32:47 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:21:21 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_finish(t_map *data)
 	exit(EXIT_FAILURE);
 }
 
-void 	ft_dead(t_map *data)
+void	ft_dead(t_map *data)
 {
 	mlx_clear_window(data->mlx, data->win);
 	printf("\n\nYOU ARE A LOSER!!!\n\n");

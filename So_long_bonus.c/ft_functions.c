@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:55:27 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/19 16:56:48 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:22:44 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ char	*ft_itoa(int n)
 
 void	ft_write(t_map *data)
 {
-	char *movements;
-	
+	char	*movements;
+
 	movements = ft_itoa(data->move);
-	mlx_string_put(data->mlx, data->win,34 ,34, 0x00000000, "Movements: " );
-	mlx_string_put(data->mlx, data->win,107,34, 0x00000000, movements);
-	mlx_string_put(data->mlx, data->win,33 ,33, 0xFFFFFFFF, "Movements: " );
-	mlx_string_put(data->mlx, data->win,106,33, 0xFFFFFFFF, movements);	
+	mlx_string_put(data->mlx, data->win, 34, 34, 0x00000000, "Movements: ");
+	mlx_string_put(data->mlx, data->win, 107, 34, 0x00000000, movements);
+	mlx_string_put(data->mlx, data->win, 33, 33, 0xFFFFFFFF, "Movements: ");
+	mlx_string_put(data->mlx, data->win, 106, 33, 0xFFFFFFFF, movements);
 	free(movements);
 }

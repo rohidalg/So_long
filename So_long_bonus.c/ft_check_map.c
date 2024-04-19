@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:17:31 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/09 17:08:25 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:20:23 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,11 @@ void	ft_check_double(t_map *data)
 			if (data->map[j][i] == 'C')
 				data->count++;
 			if (data->map[j][i] == 'M')
-			 	data->monster++;
+				data->monster++;
 		}
 	}
-	if (data->player != 1 || data->monster < 1 || data->end != 1 || data->count < 1)
+	if (data->player != 1 || data->monster < 1 || data->end != 1
+		|| data->count < 1)
 	{
 		write(2, "\n\nDOUBLE_ERROR\n\n", 17);
 		exit(EXIT_FAILURE);
