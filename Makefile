@@ -8,15 +8,15 @@ RM = rm -rf
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror -g3
 
-MLX_FLAGS = -g -Lmlx -lmlx -framework OpenGL -framework Appkit 
+MLX_FLAGS = -g -Lminilibx-linux -lmlx_Linux -lX11 -lXext 
 
 HEADERS =	so_long.h \
 		./get_next_line/get_next_line.h \
-		mlx/mlx.h
+		minilibx-linux/mlx.h
 
-INCLUDES =	mlx/libmlx.a
+INCLUDES =	minilibx-linux/libmlx.a
 
 SRCs =	ft_read_map.c	\
 		ft_check_map.c \
@@ -38,7 +38,7 @@ vpath %.c sources get_next_line
 all	:	make_lib make_dir $(NAME)
 
 make_lib:
-		$(MK) -C mlx
+		$(MK) -C minilibx-linux
 
 make_dir:
 		$(MKD) -p $(DIR_OBJs)
@@ -47,10 +47,10 @@ $(DIR_OBJs)/%.o: %.c $(HEADERS) | make_dir
 		@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME)	:	$(OBJs) $(HEADERS)
-	$(CC) $(CFLAGS) $(MLX_FLAGS) $(OBJs) $(INCLUDES) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJs) $(INCLUDES) -o $(NAME) $(MLX_FLAGS) 
 
 clean	:
-	$(MK) clean -C mlx
+	$(MK) clean -C minilibx-linux
 	$(RM) $(DIR_OBJs)
 
 fclean	:	clean
