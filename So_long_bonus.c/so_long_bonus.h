@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/19 17:43:21 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/05/09 19:24:34 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@
 # define D 2
 
 # include "get_next_line/get_next_line.h"
-# include "mlx/mlx.h"
+# include "minilibx-linux/mlx.h"
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -145,6 +145,7 @@ void				ft_free_checker(t_checker *c, int hight);
 void				ft_char_hunter(t_checker *c, t_map *data, int i, int j);
 void				ft_is_posible(t_map *data, int i, int j, int treasure);
 void				ft_load_image(t_map *data);
+void				ft_load_image_player(t_map *data, int hig, int wid);
 void				ft_frame_left(t_map *data, int *j, int *i);
 void				ft_frame_right(t_map *data, int *j, int *i);
 void				ft_stopp(t_map *data, int *j, int *i);

@@ -10,13 +10,13 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 
-MLX_FLAGS = -g -Lmlx -lmlx -framework OpenGL -framework Appkit 
+MLX_FLAGS = -g -Lminilibx-linux -lmlx_Linux -lX11 -lXext 
 
 HEADERS =	so_long_bonus.h \
 		./get_next_line/get_next_line.h \
-		mlx/mlx.h
+		minilibx-linux/mlx.h
 
-INCLUDES =	mlx/libmlx.a
+INCLUDES =	minilibx-linux/libmlx.a
 
 BSRCs =	ft_read_map.c	\
 		ft_check_map.c \
@@ -39,7 +39,7 @@ vpath %.c sources get_next_line
 all	:	make_lib make_dir $(NAME)
 
 make_lib:
-		$(MK) -C mlx
+		$(MK) -C minilibx-linux
 
 make_dir:
 		$(MKD) -p $(DIR_BOBJs)
@@ -51,7 +51,7 @@ $(NAME)	:	$(BOBJs) $(HEADERS)
 	$(CC) $(CFLAGS) $(MLX_FLAGS) $(BOBJs) $(INCLUDES) -o $(NAME)
 
 clean	:
-	$(MK) clean -C mlx
+	$(MK) clean -C minilibx-linux
 	$(RM) $(DIR_BOBJs)
 
 fclean	:	clean
