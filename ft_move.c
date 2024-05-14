@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:22:47 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/04/04 16:11:01 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/05/14 16:48:41 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,17 +96,17 @@ void	ft_move_d(t_map *data)
 		data->finish = 1;
 }
 
-int	ft_press(int keycode, t_map *data)
+int	ft_press(int keysym, t_map *data)
 {
-	if (keycode == ESC)
+	if (keysym == XK_Escape)
 		ft_exit(data);
-	else if (keycode == W && data->finish == 0)
+	else if (keysym == XK_w && data->finish == 0)
 		ft_move_w(data);
-	else if (keycode == A && data->finish == 0)
+	else if (keysym == XK_a && data->finish == 0)
 		ft_move_a(data);
-	else if (keycode == S && data->finish == 0)
+	else if (keysym == XK_s && data->finish == 0)
 		ft_move_s(data);
-	else if (keycode == D && data->finish == 0)
+	else if (keysym == XK_d && data->finish == 0)
 		ft_move_d(data);
 	return (0);
 }

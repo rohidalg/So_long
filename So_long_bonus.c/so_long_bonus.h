@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/05/09 19:24:34 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:21:23 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,13 @@
 # define PUD3 "imag/player/playerud3.xpm"
 # define PUD4 "imag/player/playerud4.xpm"
 
-# define ESC 53
-# define W 13
-# define A 0
-# define S 1
-# define D 2
-
 # include "get_next_line/get_next_line.h"
 # include "minilibx-linux/mlx.h"
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <X11/keysym.h>
+# include <X11/X.h>
 
 typedef struct s_images
 {
