@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/05/14 19:15:06 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/05/16 18:07:06 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_reset(t_map *data, char *name)
 	data->finish = 0;
 	data->move = 0;
 	data->frame = 0;
+	data->frame_linux = 0;	
 	ft_reset_dir(data);
 	data->txt = name;
 	ft_load_image(data);
@@ -48,10 +49,14 @@ void	ft_check_general(t_map *data)
 
 int	ft_frame(t_map *data)
 {
-	usleep(10000);
-	ft_write(data);
-	ft_draw(data);
-	data->frame++;
+	data->frame_linux++;
+	if (data->frame_linux == 500)
+	{
+		ft_draw(data);
+		ft_write(data);
+		data->frame++;
+		data->frame_linux = 0;	
+	}
 	if (data->count == 0 && data->player == 1 && data->finish == 1)
 		ft_finish(data);
 	return (0);
@@ -70,9 +75,8 @@ int	main(int words, char **arguments)
 		ft_check_general(&data);
 		data.win = mlx_new_window(data.mlx, data.width * 60, data.hight * 60,
 				"so_long");
-		// mlx_hook(data.win, 0, 0, ft_write, &data);
 		mlx_hook(data.win, DestroyNotify, ButtonPressMask, ft_exit, &data);
-		mlx_hook(data.win, KeyPress, KeyPressMask, ft_press, &data);
+		mlx_key_hook(data.win, ft_press, &data);
 		mlx_loop_hook(data.mlx, ft_frame, &data);
 		mlx_loop(data.mlx);
 	}

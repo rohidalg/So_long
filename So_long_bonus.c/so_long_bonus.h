@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/05/14 18:21:23 by rohidalg         ###   ########.fr       */
+/*   Updated: 2024/05/16 18:17:14 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ typedef struct s_map
 	int				monster;
 	unsigned int	move;
 	unsigned int	frame;
+	unsigned int	frame_linux;
 	char			*txt;
 	char			**map;
 	void			*mlx;
