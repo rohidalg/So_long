@@ -25,7 +25,7 @@ void	ft_reset(t_map *data, char *name)
 	data->finish = 0;
 	data->move = 0;
 	data->frame = 0;
-	data->frame_linux = 0;	
+	data->frame_linux = 0;
 	ft_reset_dir(data);
 	data->txt = name;
 	ft_load_image(data);
@@ -55,7 +55,7 @@ int	ft_frame(t_map *data)
 		ft_draw(data);
 		ft_write_bonus(data);
 		data->frame++;
-		data->frame_linux = 0;	
+		data->frame_linux = 0;
 	}
 	if (data->count == 0 && data->player == 1 && data->finish == 1)
 		ft_finish(data);

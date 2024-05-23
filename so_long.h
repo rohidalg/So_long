@@ -46,11 +46,11 @@
 
 # include "get_next_line/get_next_line.h"
 # include "minilibx-linux/mlx.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <X11/keysym.h>
-# include <X11/X.h>
 
 typedef struct s_images
 {
@@ -125,10 +125,10 @@ void				ft_move_d(t_map *data);
 int					ft_press(int keycode, t_map *data);
 int					ft_strcmp(char *s1, char *s2);
 int					ft_numlen(int n, int base);
-void	ft_itoa(unsigned int n);
-char	*ft_itoa_bonus(int n);
-void	ft_write(unsigned int n);
-void	ft_write_bonus(t_map *data);
+void				ft_itoa(unsigned int n);
+char				*ft_itoa_bonus(int n);
+void				ft_write(unsigned int n);
+void				ft_write_bonus(t_map *data);
 int					ft_exit(t_map *data);
 void				ft_finish(t_map *data);
 void				ft_dead(t_map *data);
@@ -138,7 +138,7 @@ void				ft_check_outline(t_map *data);
 void				ft_check_ber(t_map *data);
 void				ft_check_char(t_map *data);
 void				ft_check_double(t_map *data);
-void	ft_check_pirate(t_map *data);
+void				ft_check_pirate(t_map *data);
 void				ft_check_countchar(t_map *data);
 void				ft_malloc_map(t_checker *c, t_map *data);
 void				ft_free_checker(t_checker *c, int hight);
