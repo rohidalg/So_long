@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:22:47 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/05/23 17:47:41 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/19 18:04:12 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	ft_move_w(t_map *data)
 {
 	if (data->map[data->y - 1][data->x] != '1' && data->map[data->y
-		- 1][data->x] != 'E')
+		- 1][data->x] != 'E') //verificamos que no se mueva encima de paredes o salidas
 	{
 		if (data->map[data->y - 1][data->x] == 'C' || data->map[data->y
-			- 1][data->x] == '0')
+			- 1][data->x] == '0') //mueve al jugador
 		{
 			if (data->map[data->y - 1][data->x] == 'C')
-				data->count--;
+				data->count--; //diminuye el contador y actuaiza posiciones
 			data->map[data->y][data->x] = '0';
 			data->map[data->y - 1][data->x] = 'P';
 		}
@@ -30,7 +30,7 @@ void	ft_move_w(t_map *data)
 		ft_write(data->move);
 	}
 	else if (data->map[data->y - 1][data->x] == 'E' && data->count == 0)
-		data->finish = 1;
+		data->finish = 1; // verificar si el juego ha terminado
 }
 
 void	ft_move_a(t_map *data)
@@ -110,3 +110,4 @@ int	ft_press(int keysym, t_map *data)
 		ft_move_d(data);
 	return (0);
 }
+// hace el movimineto correspondiennte y comprueba si has terminado

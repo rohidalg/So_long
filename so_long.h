@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:51:08 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/02/19 16:10:55 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/19 18:23:34 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,6 @@ void				ft_check_ber(t_map *data);
 void				ft_check_char(t_map *data);
 void				ft_check_double(t_map *data);
 void				ft_check_pirate(t_map *data);
-void				ft_check_countchar(t_map *data);
 void				ft_malloc_map(t_checker *c, t_map *data);
 void				ft_free_checker(t_checker *c, int hight);
 void				ft_char_hunter(t_checker *c, t_map *data, int i, int j);

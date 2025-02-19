@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 16:50:25 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/05/23 17:47:27 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/19 17:55:48 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,4 @@ void	ft_draw(t_map *data)
 		i++;
 	}
 }
+// pega cada imagen en su lugar corespondiente

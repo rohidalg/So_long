@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:17:31 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/02/19 16:07:41 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/19 18:17:22 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	ft_check_double(t_map *data)
 	}
 }
 
-void	ft_check_countchar(t_map *data)
+void	ft_check_pirate(t_map *data)
 {
 	int	i[2];
 	int	j[2];

@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/02/19 16:34:10 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/19 18:18:13 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_load_image(t_map *data)
 	data->images->exit = mlx_xpm_file_to_image(data->mlx, EXIT, &hig, &wid);
 	data->images->win = mlx_xpm_file_to_image(data->mlx, WIN, &hig, &wid);
 }
+//cargamos las imagenes en los datos
 
 void	ft_reset(t_map *data, char *name)
 {
@@ -39,6 +40,7 @@ void	ft_reset(t_map *data, char *name)
 	data->txt = name;
 	ft_load_image(data);
 }
+//reseteamos todos los datos
 
 void	ft_check_general(t_map *data)
 {
@@ -50,12 +52,13 @@ void	ft_check_general(t_map *data)
 }
 
 int	ft_frame(t_map *data)
-{
+{	
 	ft_draw(data);
 	if (data->count == 0 && data->player == 1 && data->finish == 1)
 		ft_finish(data);
 	return (0);
 }
+//dibuja y comprueba que los requisitos para llegar a la salida se cumplen
 
 int	main(int words, char **arguments)
 {
@@ -69,10 +72,10 @@ int	main(int words, char **arguments)
 		ft_maplloc(&data);
 		ft_check_general(&data);
 		data.win = mlx_new_window(data.mlx, data.width * 60, data.hight * 60,
-				"so_long");
-		mlx_hook(data.win, DestroyNotify, ButtonPressMask, ft_exit, &data);
-		mlx_hook(data.win, KeyPress, KeyPressMask, ft_press, &data);
-		mlx_loop_hook(data.mlx, ft_frame, &data);
+				"so_long"); //abrimos la ventana
+		mlx_hook(data.win, DestroyNotify, ButtonPressMask, ft_exit, &data); // salir con la cruz 
+		mlx_hook(data.win, KeyPress, KeyPressMask, ft_press, &data); // funcion para mover el personaje
+		mlx_loop_hook(data.mlx, ft_frame, &data); // recarga los frames
 		mlx_loop(data.mlx);
 	}
 	else

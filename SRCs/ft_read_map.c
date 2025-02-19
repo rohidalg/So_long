@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:55:41 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/02/19 16:07:41 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/19 17:22:14 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	ft_map_size(t_map *data)
 	gnl = 0;
 	close(fd);
 }
+//lee cada linea y va comprobando que tenga el mismo ancho
 
 void	ft_maplloc(t_map *data)
 {
@@ -78,3 +79,4 @@ void	ft_maplloc(t_map *data)
 	data->map[i] = 0;
 	close(fd);
 }
+//reserva memoria, lee y copia cada linea.
