@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 17:17:31 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/05/23 17:48:02 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:07:41 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_check_outline(t_map *data)
 	}
 	if (fail != 0)
 	{
-		write(2, "\n\nOUTLINE_FAILED\n\n", 19);
+		write(2, "Error\nOUTLINE_FAILED\n\n", 23);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -44,7 +44,7 @@ void	ft_check_ber(t_map *data)
 	if (ft_strcmp(&data->txt[ft_strlen(data->txt) - 4], ".ber") != 0
 		|| ft_strlen(data->txt) <= 4)
 	{
-		write(2, "\n\n.ber_FAILED\n\n", 16);
+		write(2, "Error\n.ber_FAILED\n\n", 20);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -64,7 +64,7 @@ void	ft_check_char(t_map *data)
 				&& data->map[j][i] != 'P' && data->map[j][i] != 'E'
 				&& data->map[j][i] != 'C' && data->map[j][i] != 'M')
 			{
-				write(2, "\n\nCHAR_ERROR\n\n", 15);
+				write(2, "Error\n CHAR_ERROR\n", 19);
 				exit(EXIT_FAILURE);
 			}
 			else
@@ -98,7 +98,7 @@ void	ft_check_double(t_map *data)
 	if (data->player != 1 || data->monster < 1 || data->end != 1
 		|| data->count < 1)
 	{
-		write(2, "\n\nDOUBLE_ERROR\n\n", 17);
+		write(2, "Error\n DOUBLE_ERROR\n", 21);
 		exit(EXIT_FAILURE);
 	}
 }

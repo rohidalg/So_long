@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 13:52:31 by rohidalg          #+#    #+#             */
-/*   Updated: 2024/05/23 17:48:00 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:08:18 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_is_posible(t_map *data, int j, int i, int treasure)
 	ft_char_hunter(&c, data, j, i);
 	if (c.coins_treasure != 0)
 	{
-		write(2, "\n\nMAP_IS_IMPOSIBLE\n\n", 21);
+		write(2, "Error\nMAP_IS_IMPOSIBLE\n\n", 25);
 		exit(EXIT_FAILURE);
 	}
 	ft_free_checker(&c, data->hight);

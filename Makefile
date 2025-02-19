@@ -5,7 +5,7 @@ MK = make -s
 MKD = mkdir
 RM = rm -rf
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g3 
+CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address -g3
 MLX_FLAGS = -g -Lminilibx-linux -lmlx_Linux -lX11 -lXext 
 
 HEADERS = so_long.h \
