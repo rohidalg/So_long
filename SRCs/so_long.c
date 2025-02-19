@@ -6,7 +6,7 @@
 /*   By: rohidalg <rohidalg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:50:55 by rohidalg          #+#    #+#             */
-/*   Updated: 2025/02/19 16:07:41 by rohidalg         ###   ########.fr       */
+/*   Updated: 2025/02/19 16:34:10 by rohidalg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,8 @@ int	main(int words, char **arguments)
 	}
 	else
 	{
-		write(2, "Error\nINCORRECT COMMAND\n\n", 26);
+		write(2, "Error\nINCORRECT_COMMAND\n\n", 26);
 		exit(EXIT_FAILURE);
 	}
 	return (0);
 }
-//CAMBIAR LOS WRITE A LA SALIDA 2
